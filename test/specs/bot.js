@@ -15,22 +15,36 @@ describe("My S&box bot application", () => {
   it("should click the enter button when it is clickable", async () => {
     try {
       while (true) {
-        await DevPreviewPage.btnEnter.waitForClickable({
-          timeout: Number.MAX_SAFE_INTEGER,
-        });
-        await DevPreviewPage.divEnter.click();
-        let timestamp = moment()
-          .format("MM-DD-hh-mm-ss-A")
-          .replace(/:|\s/g, "");
-        await browser.saveScreenshot("./screenshots/" + timestamp + ".png");
+        // Click the enter button if it's enabled
+        if (await DevPreviewPage.btnEnter.isClickable()) {
+          await DevPreviewPage.divEnter.click();
+          let timestamp = moment()
+            .format("MM-DD-hh-mm-ss-A")
+            .replace(/:|\s/g, "");
+          await browser.saveScreenshot(
+            "./screenshots/RAFFLE-" + timestamp + ".png"
+          );
+        }
+        // Refresh the page if the page refresh prompt displays
+        if (await DevPreviewPage.divPleaseRefresh.isDisplayed()) {
+          await DevPreviewPage.open();
+          let timestamp = moment()
+            .format("MM-DD-hh-mm-ss-A")
+            .replace(/:|\s/g, "");
+          await browser.saveScreenshot(
+            "./screenshots/REFRESH-" + timestamp + ".png"
+          );
+        }
       }
     } catch (e) {
       console.log(e);
-      for(let i = 0; i<10; i++){
+      for (let i = 0; i < 10; i++) {
         let timestamp = moment()
           .format("MM-DD-hh-mm-ss-A")
           .replace(/:|\s/g, "");
-        await browser.saveScreenshot("./screenshots/ERROR-" + timestamp + ".png");
+        await browser.saveScreenshot(
+          "./screenshots/ERROR-" + timestamp + ".png"
+        );
         await browser.pause(3000);
       }
     }
