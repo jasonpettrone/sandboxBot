@@ -35,6 +35,7 @@ describe("My S&box bot application", () => {
             "./screenshots/REFRESH-" + timestamp + ".png"
           );
         }
+        await browser.pause(250);
       }
     } catch (e) {
       console.log(e);
