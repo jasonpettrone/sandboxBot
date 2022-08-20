@@ -1,5 +1,5 @@
 # sandboxBot
-S&box is a new game coming out that is the successor to Garry's Mod. The only way to get access to the game is through https://asset.party/get/developer/preview, which requires you to click the "Enter" button when it's enabled. Garry does this randomly, so I've created this bot which automatically monitors the webpage and clicks.
+S&box is a new game coming out that is the successor to Garry's Mod. The only way to get access to the game is through https://asset.party/get/developer/preview, which requires you to click the "Enter" button when it's enabled. Garry (the creator of S&box) does this randomly, so I've created this bot which automatically monitors the webpage and clicks.
 
 Built using: https://webdriver.io/
 
