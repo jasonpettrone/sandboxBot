@@ -6,7 +6,9 @@ class DevPreviewPage extends Page {
   }
 
   get btnLogin() {
-    return $("/html/body/header/div[1]/div/div/div/a[2]");
+    return $(
+      'a[href="https://steamcommunity.com/openid/login?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=checkid_setup&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fasset.party%2F.login%2F&openid.realm=https%3A%2F%2Fasset.party"]'
+    );
   }
 
   get btnEnter() {
@@ -15,15 +17,13 @@ class DevPreviewPage extends Page {
 
   // This div is the parent of btnEnter. This is what we click to enter the raffle.
   get divEnter() {
-    return $("/html/body/div[4]/div/div/div/div/div/controls/div[2]");
+    return $('button[class="button is-large is-primary"]').parentElement();
   }
 
   // If garry updates the site, we need to refresh the page
   get divPleaseRefresh() {
     return $('div[id="components-reconnect-modal"]');
   }
-
-  
 
   open() {
     return super.open("get/developer/preview");
