@@ -6,7 +6,9 @@ Built using: https://webdriver.io/
 # Getting started with the bot
 
 ## Installing dependencies
-Install NodeJS: https://nodejs.org/en/. For reference, I currently have version 14.15.4. Any version later than 14.0.0 should work. You can check your Node version by running the command ```node -v``` in your terminal.
+* Install NodeJS: https://nodejs.org/en/. For reference, I currently have version 14.15.4. Any version later than 14.0.0 should work. You can check your Node version by running the command ```node -v``` in your terminal.
+* Install Python 3 (https://www.python.org/downloads/release/python-3106/)
+* Install Visual Studio Workload "Desktop development with C++" (Use Visual Studio Installer)
 
 ## Running the bot
 1. Clone this repo to your local machine
