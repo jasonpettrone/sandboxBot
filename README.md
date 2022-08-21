@@ -17,3 +17,7 @@ Built using: https://webdriver.io/
 4. To start the bot, run the command ```npm run wdio```
 5. The bot will pause on the Steam login page. I'm not parsing or storing your credentials in ANY way with this bot. Login to your Steam profile.
 6. The bot will take care of the rest for you!
+
+## Glorious success!
+On 8/21/2022 at around 2:30am EST, I was able to get access to s&box using this bot!
+![image](https://user-images.githubusercontent.com/16530058/185804973-06a83372-758e-4d26-a22f-4080933f06b1.png)
