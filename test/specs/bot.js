@@ -20,6 +20,8 @@ describe("My S&box bot application", () => {
         if (await DevPreviewPage.btnEnter.isClickable()) {
           console.log("Enter button active. Clicking!");
           await DevPreviewPage.divEnter.click();
+          console.log("Clicked!");
+          await browser.pause(100);
           let timestamp = moment()
             .format("MM-DD-hh-mm-ss-A")
             .replace(/:|\s/g, "");
@@ -31,6 +33,7 @@ describe("My S&box bot application", () => {
         else if (await DevPreviewPage.divPleaseRefresh.isDisplayed()) {
           console.log("Refresh page active. Refreshing page!");
           await DevPreviewPage.open();
+          console.log("Refreshed!");
           let timestamp = moment()
             .format("MM-DD-hh-mm-ss-A")
             .replace(/:|\s/g, "");
