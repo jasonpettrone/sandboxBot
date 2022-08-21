@@ -7,6 +7,7 @@ describe("My S&box bot application", () => {
   });
   it("should wait for me to login to my Steam account", async () => {
     await DevPreviewPage.btnLogin.click();
+    console.log("Please login to your Steam account.");
     await DevPreviewPage.divLoginHeader.waitForDisplayed({ timeout: 180000 }); // 3 minutes max to login
   });
   it("should navigate back to the dev preview page", async () => {
@@ -17,6 +18,7 @@ describe("My S&box bot application", () => {
       while (true) {
         // Click the enter button if it's enabled
         if (await DevPreviewPage.btnEnter.isClickable()) {
+          console.log("Enter button active. Clicking!");
           await DevPreviewPage.divEnter.click();
           let timestamp = moment()
             .format("MM-DD-hh-mm-ss-A")
@@ -26,7 +28,8 @@ describe("My S&box bot application", () => {
           );
         }
         // Refresh the page if the page refresh prompt displays
-        if (await DevPreviewPage.divPleaseRefresh.isDisplayed()) {
+        else if (await DevPreviewPage.divPleaseRefresh.isDisplayed()) {
+          console.log("Refresh page active. Refreshing page!");
           await DevPreviewPage.open();
           let timestamp = moment()
             .format("MM-DD-hh-mm-ss-A")
@@ -35,7 +38,9 @@ describe("My S&box bot application", () => {
             "./screenshots/REFRESH-" + timestamp + ".png"
           );
         }
-        await browser.pause(250);
+        else {
+          await browser.pause(1500);
+        }
       }
     } catch (e) {
       console.log(e);
