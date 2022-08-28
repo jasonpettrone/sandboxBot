@@ -18,6 +18,11 @@ Built using: https://webdriver.io/
 5. The bot will pause on the Steam login page. I'm not parsing or storing your credentials in ANY way with this bot. Login to your Steam profile.
 6. The bot will take care of the rest for you!
 
+## Monitoring the bot
+The bot will sit on the developer preview page waiting for a raffle to occur. Feel free to minimize the browser window or place it off to the side. When a raffle or page refresh occurs the bot will take a picture of the screen with a timestamp. Monitor the ```screenshots``` folder to see if there was any raffles while you were away!
+
+To check if you got access to s&box, look for it in your Steam game library, the bot will NOT notify you if you won a raffle!
+
 ## Glorious success!
 On 8/21/2022 at around 2:30am EST, I was able to get access to s&box using this bot!
 ![image](https://user-images.githubusercontent.com/16530058/185804973-06a83372-758e-4d26-a22f-4080933f06b1.png)
