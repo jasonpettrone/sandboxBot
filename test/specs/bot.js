@@ -21,7 +21,7 @@ describe("My S&box bot application", () => {
           console.log("Enter button active. Clicking!");
           await DevPreviewPage.divEnter.click();
           console.log("Clicked!");
-          await browser.pause(100);
+          await browser.pause(200);
           let timestamp = moment()
             .format("MM-DD-hh-mm-ss-A")
             .replace(/:|\s/g, "");
@@ -30,7 +30,11 @@ describe("My S&box bot application", () => {
           );
         }
         // Refresh the page if the page refresh prompt displays
-        else if (await DevPreviewPage.divPleaseRefresh.isDisplayed()) {
+        else if (
+          (await DevPreviewPage.divPleaseRefresh.isDisplayed()) ||
+          (await browser.getTitle()) === "Site Under Construction" ||
+          !(await DevPreviewPage.btnEnter.isDisplayed())
+        ) {
           console.log("Refresh page active. Refreshing page!");
           await DevPreviewPage.open();
           console.log("Refreshed!");
@@ -41,9 +45,7 @@ describe("My S&box bot application", () => {
             "./screenshots/REFRESH-" + timestamp + ".png"
           );
         }
-        else {
-          await browser.pause(1500);
-        }
+        await browser.pause(1500);
       }
     } catch (e) {
       console.log(e);
